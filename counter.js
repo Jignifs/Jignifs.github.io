@@ -1,15 +1,26 @@
-let counter = 0;
+let levelHTML;
+let moneyHTML;
+
+if (!localStorage.getItem('started')) {
+    localStorage.setItem('started', true);
+    localStorage.setItem('level', 1);
+    localStorage.setItem('money', 0);
+}
+
+let level = localStorage.getItem('level');
+let money = localStorage.getItem('money');
 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('button').onclick = count;
+    levelHTML = document.querySelector('#level');
+
+    levelHTML.innerHTML = level;
+    moneyHTML.innerHTML = money;
 });
 
 function count() {
-    counter++;
+    level++;
 
-    if (counter % 10 === 0) {
-        alert(`Count is now ${counter}`);
-    }
-
-    document.querySelector('h1').innerHTML = counter;
+    levelHTML.innerHTML = level;
+    localStorage.setItem('level', level);
 }
