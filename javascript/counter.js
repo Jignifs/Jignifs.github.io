@@ -11,8 +11,9 @@ let level = localStorage.getItem('level');
 let money = localStorage.getItem('money');
 
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('button').onclick = count;
+    document.querySelector('#gainlevel').onclick = count;
     levelHTML = document.querySelector('#level');
+    moneyHTML = document.querySelector('#money');
 
     levelHTML.innerHTML = level;
     moneyHTML.innerHTML = money;

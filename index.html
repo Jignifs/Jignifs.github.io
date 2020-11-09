@@ -2,12 +2,20 @@
 <html lang="en">
     <head>
         <title>Home</title>
-        <script src="counter.js"></script>
+        <script src="javascript/counter.js"></script>
+        <script src="javascript/pagecontroller.js"></script>
     </head>
     <body>
-        <h1 id="name">_____</h1>
-        <h1>Level: <span id="level">1</span></h1>
-        <h1>$ <span id="money">0</span></h1>
-        <button>Gain Level</button>
+        <div id="homeview" class="view">
+            <h1 id="name">_____</h1>
+            <h1>Level: <span id="level">1</span></h1>
+            <h1>$ <span id="money">0</span></h1>
+            <button id="gainlevel">Gain Level</button>
+            <button data-page="inventoryview" class="viewbutton">Inventory</button>
+        </div>
+
+        <div id="inventoryview" class="view">
+            <button data-page="homeview" class="viewbutton">Home</button>
+        </div>
     </body>
 </html>
